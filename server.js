@@ -21,5 +21,13 @@ app.use((req, res, next) => {
   next();
 })
 
+// /////////////////////////////////////////
+// Routes
+// ////////////////////////////////////////
+
+const userContoller = require('./controllers/userRoutes')
+app.use('/users', userContoller)
+
+// ///////////////////////////////////////
 
 app.listen(port, ()=>{console.log("Character sheet is running on port "+ port + (process.env.PORT? " :: env working" : " ") )})
