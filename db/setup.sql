@@ -10,3 +10,11 @@ CREATE TABLE users(
     characters_id INT[],
     current_campaign VARCHAR(80)
 );
+
+CREATE TABLE campaigns(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(80),
+    password VARCHAR(6),
+    characters_id INT[],
+    dm_id INT
+);

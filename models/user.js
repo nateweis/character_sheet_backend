@@ -40,7 +40,7 @@ const login = (req, res ) => {
         // }
         if(req.body.password === data.password){
             jwt.sign({data:"This is the payload"}, secret, {expiresIn: '1d'}, 
-            (err, token)=>{res.status(201).append('Accept','true').json({token, err})}
+            (err, token)=>{res.status(201).append('Accept','true').json({token, err, message: "user logged in"})}
             )
         }
         else res.json({message: "wrong username or Password"})
@@ -48,7 +48,7 @@ const login = (req, res ) => {
     .catch(err => {
         // console.log("oopsie")
         // console.log(err)
-        res.json({message: "wrong Username or password"})
+        res.json({message: "wrong username or password"})
     })
 
 
